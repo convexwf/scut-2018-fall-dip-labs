@@ -7,18 +7,22 @@
 ## 6.2 实验要求
 
 <1> 用 Fourier 变换算法对图像作二维 Fourier 变换。
+
 <2> 用 Fourier 反变换算法对图像作二维 Fourier 反变换。
+
 <3> 频域逆滤波和维纳滤波图像复原。
 
 ## 6.3 实验步骤
 
 <1> 根据 BMP 格式，将图像内容读入内存数组；
+
 <2> 用快速 Fourier 变换算法，对图像作二维 FFT 变换得到 $G(u,v)$；(考虑图像为 $256 \times 256$，可以采用快速 Fourier 变换方法)
+
 <3> 进行频域逆滤波和维纳滤波
 
-逆滤波退化函数：$\hat{F}(u,v) = \frac{G(u,v)}{H(u,v)}$
+逆滤波退化函数: $\hat{F}(u,v) = \frac{G(u,v)}{H(u,v)}$
 
-维纳滤波退化函数：$\hat{F}(u,v) = \left[ \frac{1}{H(u,v)} \cdot \frac{|H(u,v)|^2}{|H(u,v)|^2 + K} \right] \cdot G(u,v)$
+维纳滤波退化函数: $\hat{F}(u,v) = \left[ \frac{1}{H(u,v)} \cdot \frac{|H(u,v)|^2}{|H(u,v)|^2 + K} \right] \cdot G(u,v)$
 
 其中 $H(u,v) = \exp(-k(u^2 + v^2)^{5/6})$
 
